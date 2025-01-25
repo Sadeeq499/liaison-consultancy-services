@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    /* Button Styles */
+    .btn-primary {
+        @apply px-6 py-3 bg-gradient-to-r from-emerald-400 to-teal-500 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95;
+    }
+
+    /* Notification Panel Styles */
+    .notification-panel {
+        @apply bg-gradient-to-r from-emerald-400 to-teal-500 text-white p-6 rounded-xl shadow-lg;
+    }
+
+    .notification-card {
+        @apply bg-white/20 backdrop-blur-sm p-4 rounded-lg;
+    }
+
+    .notification-badge {
+        @apply bg-indigo-500 text-sm px-2 py-1 rounded;
+    }
+}
