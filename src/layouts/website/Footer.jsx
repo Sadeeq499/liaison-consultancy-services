@@ -129,13 +129,34 @@ function Footer() {
             <p className="text-gray-600 mb-4 text-sm">
               Subscribe to our newsletter for updates and insights.
             </p>
-            <form className="space-y-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400"
-              />
-              <button className="btn-primary w-full py-2">Subscribe</button>
+            <form className="space-y-3">
+              <div className="relative">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-50 hover:bg-white transition-colors duration-300"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              >
+                Subscribe
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </button>
             </form>
           </div>
         </div>
