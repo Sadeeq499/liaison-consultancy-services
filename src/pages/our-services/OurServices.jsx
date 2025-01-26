@@ -42,7 +42,7 @@ function OurServices() {
         "Aviation safety compliance",
         "Obstacle assessment",
         "Documentation preparation",
-        "Regulatory liaison",
+        "Regulatory Liasion",
       ],
     },
     {
@@ -80,7 +80,7 @@ function OurServices() {
         "Land use change applications",
         "Zoning regulation compliance",
         "Conversion documentation",
-        "Local authority liaison",
+        "Local authority Liasion",
         "Development potential assessment",
       ],
     },

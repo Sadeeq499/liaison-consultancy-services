@@ -56,7 +56,7 @@ function AboutUs() {
             className="max-w-2xl"
           >
             <h1 className="text-5xl font-bold mb-6">
-              About Liaison Consultancy
+              About Liasion Consultancy
             </h1>
             <p className="text-xl">
               Excellence in Professional Consulting Since 1995. We bring
@@ -91,7 +91,7 @@ function AboutUs() {
                 Our Story
               </h2>
               <p className="text-gray-600 mb-6">
-                For nearly three decades, Liaison Consultancy Services has been
+                For nearly three decades, Liasion Consultancy Services has been
                 at the forefront of professional consulting in the construction
                 and development sector. We've built our reputation on delivering
                 exceptional results through innovative solutions and unwavering

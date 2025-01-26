@@ -1,8 +1,8 @@
-# Liaison Consultancy Services Website
+# Liasion Consultancy Services Website
 
-A modern, responsive website for Liaison Consultancy Services built with React, Vite, and TailwindCSS.
+A modern, responsive website for Liasion Consultancy Services built with React, Vite, and TailwindCSS.
 
-![Liaison Logo](src/assets/images/logo.png)
+![Liasion Logo](src/assets/images/logo.png)
 
 ## 🌟 Features
 
@@ -35,13 +35,13 @@ A modern, responsive website for Liaison Consultancy Services built with React, 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/liaison-website.git
+   git clone https://github.com/yourusername/Liasion-website.git
    ```
 
 2. Navigate to project directory:
 
    ```bash
-   cd liaison-website
+   cd Liasion-website
    ```
 
 3. Install dependencies:

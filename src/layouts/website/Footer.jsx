@@ -29,10 +29,10 @@ function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={images.logo} alt="Liaison Logo" className="h-12" />
+              <img src={images.logo} alt="Liasion Logo" className="h-12" />
               <div className="flex flex-col">
                 <span className="text-lg font-semibold text-green-700">
-                  Liaison
+                  Liasion
                 </span>
                 <span className="text-sm text-gray-600">
                   Consultancy Services
@@ -116,7 +116,7 @@ function Footer() {
               </li>
               <li className="flex items-center gap-2 text-gray-600">
                 <MdOutlineEmail className="text-green-700 text-xl" />
-                <span>info@liaisonconsultancy.com</span>
+                <span>info@Liasionconsultancy.com</span>
               </li>
             </ul>
           </div>
@@ -167,7 +167,7 @@ function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} Liaison Consultancy Services. All
+              © {new Date().getFullYear()} Liasion Consultancy Services. All
               rights reserved.
             </div>
             <div className="flex gap-4">

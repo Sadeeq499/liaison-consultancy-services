@@ -46,7 +46,7 @@ function Header() {
       {/* Brand logo - shown in center for mobile, left for desktop */}
       <NavbarContent className="sm:hidden max-w-fit" justify="center">
         <NavbarBrand>
-          <img src={images.logo} alt="Liaison Logo" />
+          <img src={images.logo} alt="Liasion Logo" />
         </NavbarBrand>
       </NavbarContent>
 
@@ -56,10 +56,10 @@ function Header() {
           onClick={() => navigate("/")}
           className="max-w-fit cursor-pointer"
         >
-          <img src={images.logo} alt="Liaison Logo" className="h-14" />
+          <img src={images.logo} alt="Liasion Logo" className="h-14" />
           <div className="flex flex-col">
             <span className="text-xl font-semibold text-green-700">
-              Liaison Consultancy Services
+              Liasion Consultancy Services
             </span>
             <span className="text-xs text-gray-500">
               Excellence in Professional Consulting

@@ -70,7 +70,7 @@ function ContactUs() {
     },
     {
       title: "Email Address",
-      details: ["info@liaison.com", "support@liaison.com"],
+      details: ["info@Liasion.com", "support@Liasion.com"],
       icon: (
         <svg
           className="w-6 h-6"
