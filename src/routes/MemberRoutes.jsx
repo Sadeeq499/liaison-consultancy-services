@@ -6,12 +6,14 @@ import Tracking from "../pages/Member/Tracking";
 import Notifications from "../pages/Member/Notifications";
 import Profile from "../pages/Member/Profile";
 import Support from "../pages/Member/Support";
+import Documents from "../pages/Member/Documents";
 
 function MemberRoutes() {
   return (
     <Routes>
       <Route path="/member/dashboard" element={<Dashboard />} />
       <Route path="/member/services" element={<Services />} />
+      <Route path="/member/documents" element={<Documents />} />
       <Route
         path="/member/request-service/:serviceId"
         element={<ServicesRequestForm />}

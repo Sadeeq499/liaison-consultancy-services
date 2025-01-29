@@ -3,9 +3,8 @@ import MemberLayout from "../../layouts/member/MemberLayout";
 import { motion } from "framer-motion";
 import {
   FaBell,
-  FaCheck,
-  FaTimes,
-  FaExclamationTriangle,
+  FaCloudUploadAlt,
+  FaFileAlt,
   FaInfoCircle,
   FaTrash,
 } from "react-icons/fa";
@@ -15,36 +14,33 @@ function Notifications() {
   const [notifications, setNotifications] = useState([
     {
       id: 1,
-      type: "success",
-      title: "Request Approved",
-      message: "Your request for Latest E.C (REQ001) has been approved.",
+      type: "reminder",
+      title: "Document Submission Reminder",
+      message: "Don't forget to submit your Property Tax Receipt document.",
       date: "2024-03-20 14:30",
       isRead: false,
     },
     {
       id: 2,
-      type: "warning",
-      title: "Missing Documents",
-      message:
-        "Please upload the required documents for NOC - Airport Authority (REQ002).",
+      type: "upload",
+      title: "Document Uploaded Successfully",
+      message: "Your Latest E.C document has been uploaded successfully.",
       date: "2024-03-19 11:15",
       isRead: false,
     },
     {
       id: 3,
-      type: "error",
-      title: "Request Rejected",
-      message:
-        "Your request for Structural Analysis Report (REQ003) was rejected due to incomplete information.",
+      type: "info",
+      title: "New Document Required",
+      message: "Please submit the Building Plan document for your property.",
       date: "2024-03-18 09:45",
       isRead: true,
     },
     {
       id: 4,
-      type: "info",
-      title: "Document Review",
-      message:
-        "Your submitted documents for Water Feasibility Certificate are under review.",
+      type: "system",
+      title: "System Update",
+      message: "New document upload feature is now available.",
       date: "2024-03-17 16:20",
       isRead: true,
     },
@@ -52,14 +48,14 @@ function Notifications() {
 
   const getNotificationIcon = (type) => {
     switch (type) {
-      case "success":
-        return <FaCheck className="text-green-500" />;
-      case "warning":
-        return <FaExclamationTriangle className="text-yellow-500" />;
-      case "error":
-        return <FaTimes className="text-red-500" />;
+      case "reminder":
+        return <FaBell className="text-yellow-500" />;
+      case "upload":
+        return <FaCloudUploadAlt className="text-green-500" />;
       case "info":
         return <FaInfoCircle className="text-blue-500" />;
+      case "system":
+        return <FaFileAlt className="text-purple-500" />;
       default:
         return <FaBell className="text-gray-500" />;
     }
@@ -67,14 +63,14 @@ function Notifications() {
 
   const getNotificationClass = (type) => {
     switch (type) {
-      case "success":
-        return "border-green-200 bg-green-50";
-      case "warning":
+      case "reminder":
         return "border-yellow-200 bg-yellow-50";
-      case "error":
-        return "border-red-200 bg-red-50";
+      case "upload":
+        return "border-green-200 bg-green-50";
       case "info":
         return "border-blue-200 bg-blue-50";
+      case "system":
+        return "border-purple-200 bg-purple-50";
       default:
         return "border-gray-200 bg-gray-50";
     }
@@ -103,10 +99,10 @@ function Notifications() {
       <div className="p-6">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-            Notifications
+            Document Notifications
           </h1>
           <p className="text-gray-600">
-            Stay updated with your service requests and important alerts
+            Stay updated with your document submissions and requirements
           </p>
         </div>
 
@@ -114,7 +110,7 @@ function Notifications() {
         <div className="flex justify-end mb-6">
           <button
             onClick={markAllAsRead}
-            className="text-sm text-green-600 hover:text-green-700 font-medium"
+            className="text-sm text-blue-600 hover:text-blue-700 font-medium"
           >
             Mark all as read
           </button>
@@ -152,7 +148,7 @@ function Notifications() {
                   {!notification.isRead && (
                     <button
                       onClick={() => markAsRead(notification.id)}
-                      className="text-sm text-green-600 hover:text-green-700"
+                      className="text-sm text-blue-600 hover:text-blue-700"
                     >
                       Mark as read
                     </button>

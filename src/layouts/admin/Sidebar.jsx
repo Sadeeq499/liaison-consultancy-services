@@ -1,16 +1,16 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   MdDashboard,
-  MdList,
-  MdTrackChanges,
-  MdNotifications,
-  MdPerson,
-  MdSupport,
+  MdPeople,
+  MdRequestPage,
+  MdFolder,
+  MdSettings,
+  MdSupportAgent,
   MdMenu,
   MdClose,
-  MdFolder,
+  MdNotifications,
+  MdAnalytics,
+  MdPerson,
 } from "react-icons/md";
 import { images } from "../../assets/index";
 
@@ -19,39 +19,49 @@ function Sidebar({ isOpen, toggleSidebar, isLargeScreenCollapsed }) {
 
   const menuItems = [
     {
-      path: "/member/dashboard",
+      path: "/admin/dashboard",
       icon: <MdDashboard className="text-xl" />,
       label: "Dashboard",
     },
     {
-      path: "/member/services",
-      icon: <MdList className="text-xl" />,
-      label: "Services List",
+      path: "/admin/members",
+      icon: <MdPeople className="text-xl" />,
+      label: "Member Management",
     },
     {
-      path: "/member/documents",
+      path: "/admin/requests",
+      icon: <MdRequestPage className="text-xl" />,
+      label: "Service Requests",
+    },
+    {
+      path: "/admin/documents",
       icon: <MdFolder className="text-xl" />,
       label: "Documents",
     },
     {
-      path: "/member/tracking",
-      icon: <MdTrackChanges className="text-xl" />,
-      label: "Request Tracking",
-    },
-    {
-      path: "/member/notifications",
+      path: "/admin/notifications",
       icon: <MdNotifications className="text-xl" />,
       label: "Notifications",
     },
     {
-      path: "/member/profile",
-      icon: <MdPerson className="text-xl" />,
-      label: "Profile Management",
+      path: "/admin/analytics",
+      icon: <MdAnalytics className="text-xl" />,
+      label: "Analytics",
     },
     {
-      path: "/member/support",
-      icon: <MdSupport className="text-xl" />,
-      label: "Support",
+      path: "/admin/support",
+      icon: <MdSupportAgent className="text-xl" />,
+      label: "Support Tickets",
+    },
+    {
+      path: "/admin/settings",
+      icon: <MdSettings className="text-xl" />,
+      label: "Settings",
+    },
+    {
+      path: "/admin/profile",
+      icon: <MdPerson className="text-xl" />,
+      label: "Profile",
     },
   ];
 
@@ -60,7 +70,7 @@ function Sidebar({ isOpen, toggleSidebar, isLargeScreenCollapsed }) {
       {/* Mobile Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg text-white bg-green-700 hover:bg-green-800 transition-colors duration-200 shadow-lg"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg text-white bg-blue-500 hover:bg-blue-600 transition-colors duration-200 shadow-lg"
       >
         {isOpen ? (
           <MdClose className="text-xl" />
@@ -78,17 +88,17 @@ function Sidebar({ isOpen, toggleSidebar, isLargeScreenCollapsed }) {
           w-64 z-40`}
       >
         {/* Logo Section */}
-        <div className="h-20 border-b flex items-center">
+        <div className="h-20 border-b flex items-center px-4">
           {!isLargeScreenCollapsed ? (
-            <Link to="/member/dashboard" className="w-full px-4">
+            <Link to="/admin/dashboard" className="w-full px-4">
               <div className="flex items-center gap-3">
                 <img
                   src={images.logo}
                   alt="Logo"
                   className="h-12 w-12 object-contain"
                 />
-                <span className="font-semibold text-xl text-green-700">
-                  Member Portal
+                <span className="font-semibold text-xl text-indigo-700">
+                  Admin Portal
                 </span>
               </div>
             </Link>
@@ -115,12 +125,14 @@ function Sidebar({ isOpen, toggleSidebar, isLargeScreenCollapsed }) {
                   className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 group
                     ${
                       isActive
-                        ? "bg-green-700 text-white"
-                        : "text-gray-600 hover:bg-green-50 hover:text-green-700"
+                        ? "bg-blue-50 text-blue-600"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-blue-500"
                     }
                     ${isLargeScreenCollapsed ? "justify-center" : ""}`}
                 >
-                  <span className={isActive ? "text-white" : "text-green-700"}>
+                  <span
+                    className={isActive ? "text-blue-600" : "text-gray-600"}
+                  >
                     {item.icon}
                   </span>
                   {!isLargeScreenCollapsed && (
@@ -131,7 +143,7 @@ function Sidebar({ isOpen, toggleSidebar, isLargeScreenCollapsed }) {
 
                   {/* Tooltip for collapsed state */}
                   {isLargeScreenCollapsed && (
-                    <div className="hidden group-hover:block absolute left-full ml-2 px-3 py-2 bg-green-700 text-white text-sm rounded-lg shadow-lg whitespace-nowrap z-50">
+                    <div className="hidden group-hover:block absolute left-full ml-2 px-3 py-2 bg-blue-500 text-white text-sm rounded-lg shadow-lg whitespace-nowrap z-50">
                       {item.label}
                     </div>
                   )}

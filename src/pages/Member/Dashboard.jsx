@@ -1,136 +1,126 @@
 import React from "react";
 import MemberLayout from "../../layouts/member/MemberLayout";
-import { FaFileAlt, FaHourglassHalf, FaCheck, FaTimes, FaPlus } from "react-icons/fa";
-import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
+import { FaFileAlt, FaCloudUploadAlt, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
-  // Static data for statistics
-  const stats = {
-    total: 45,
-    pending: 12,
-    inReview: 8,
-    approved: 20,
-    rejected: 5,
+  // Static data for documents
+  const documentStats = {
+    totalSubmitted: 8,
+    remainingDocuments: 4,
   };
 
-  // Data for pie chart
-  const pieData = [
-    { name: "Pending", value: stats.pending, color: "#fbbf24" },
-    { name: "In Review", value: stats.inReview, color: "#60a5fa" },
-    { name: "Approved", value: stats.approved, color: "#34d399" },
-    { name: "Rejected", value: stats.rejected, color: "#f87171" },
+  // Static data for recent document submissions
+  const recentDocuments = [
+    { id: "DOC001", name: "Latest E.C", submittedDate: "2024-03-15" },
+    {
+      id: "DOC002",
+      name: "Market Value Certificate",
+      submittedDate: "2024-03-14",
+    },
+    {
+      id: "DOC003",
+      name: "Water Feasibility Certificate",
+      submittedDate: "2024-03-13",
+    },
   ];
 
-  // Static data for recent requests
-  const recentRequests = [
-    { id: "REQ001", service: "Latest E.C", status: "Pending", updated: "2024-03-15" },
-    { id: "REQ002", service: "Latest Market Value Certificate", status: "Approved", updated: "2024-03-14" },
-    { id: "REQ003", service: "Water Feasibility Certificate", status: "In Review", updated: "2024-03-13" },
+  // Documents pending for submission
+  const remainingDocuments = [
+    { id: "RD001", name: "Property Tax Receipt" },
+    { id: "RD002", name: "Building Plan" },
+    { id: "RD003", name: "Land Ownership Document" },
+    { id: "RD004", name: "NOC from Society" },
   ];
 
   return (
     <MemberLayout>
       <div className="p-6">
-        <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
-        
+        <h1 className="text-2xl font-bold mb-6">My Documents Dashboard</h1>
+
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="bg-white p-4 rounded-lg shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500">Total Requests</p>
-                <p className="text-2xl font-bold">{stats.total}</p>
+                <p className="text-gray-500">Submitted Documents</p>
+                <p className="text-2xl font-bold text-green-600">
+                  {documentStats.totalSubmitted}
+                </p>
               </div>
-              <FaFileAlt className="text-gray-400 text-xl" />
+              <FaFileAlt className="text-green-500 text-xl" />
             </div>
           </div>
           <div className="bg-white p-4 rounded-lg shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-500">Pending</p>
-                <p className="text-2xl font-bold text-yellow-400">{stats.pending}</p>
+                <p className="text-gray-500">Remaining Documents</p>
+                <p className="text-2xl font-bold text-blue-600">
+                  {documentStats.remainingDocuments}
+                </p>
               </div>
-              <FaHourglassHalf className="text-yellow-400 text-xl" />
-            </div>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-500">In Review</p>
-                <p className="text-2xl font-bold text-blue-400">{stats.inReview}</p>
-              </div>
-              <FaHourglassHalf className="text-blue-400 text-xl" />
-            </div>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-500">Approved</p>
-                <p className="text-2xl font-bold text-green-400">{stats.approved}</p>
-              </div>
-              <FaCheck className="text-green-400 text-xl" />
-            </div>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-gray-500">Rejected</p>
-                <p className="text-2xl font-bold text-red-400">{stats.rejected}</p>
-              </div>
-              <FaTimes className="text-red-400 text-xl" />
+              <FaCloudUploadAlt className="text-blue-500 text-xl" />
             </div>
           </div>
         </div>
 
-        {/* Charts Section */}
+        {/* Documents Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          {/* Recent Submissions */}
           <div className="bg-white p-4 rounded-lg shadow">
-            <h2 className="text-lg font-semibold mb-4">Request Status Distribution</h2>
-            <div className="flex justify-center">
-              <PieChart width={300} height={300}>
-                <Pie
-                  data={pieData}
-                  cx={150}
-                  cy={150}
-                  innerRadius={60}
-                  outerRadius={80}
-                  paddingAngle={5}
-                  dataKey="value"
-                >
-                  {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </div>
-          </div>
-
-          {/* Recent Requests Table */}
-          <div className="bg-white p-4 rounded-lg shadow">
-            <h2 className="text-lg font-semibold mb-4">Recent Requests</h2>
+            <h2 className="text-lg font-semibold mb-4">
+              Recently Submitted Documents
+            </h2>
             <div className="overflow-x-auto">
               <table className="min-w-full">
                 <thead>
                   <tr className="bg-gray-50">
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Service</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Updated</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      Document ID
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                      Submitted Date
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {recentRequests.map((request) => (
-                    <tr key={request.id}>
-                      <td className="px-6 py-4 whitespace-nowrap">{request.id}</td>
-                      <td className="px-6 py-4 whitespace-nowrap">{request.service}</td>
-                      <td className="px-6 py-4 whitespace-nowrap">{request.status}</td>
-                      <td className="px-6 py-4 whitespace-nowrap">{request.updated}</td>
+                  {recentDocuments.map((doc) => (
+                    <tr key={doc.id}>
+                      <td className="px-6 py-4 whitespace-nowrap">{doc.id}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {doc.name}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {doc.submittedDate}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Remaining Documents */}
+          <div className="bg-white p-4 rounded-lg shadow">
+            <h2 className="text-lg font-semibold mb-4">Documents to Submit</h2>
+            <div className="space-y-3">
+              {remainingDocuments.map((doc) => (
+                <div
+                  key={doc.id}
+                  className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+                >
+                  <span className="text-gray-700">{doc.name}</span>
+                  <Link
+                    to={`/member/upload-document/${doc.id}`}
+                    className="text-blue-500 hover:text-blue-600"
+                  >
+                    <FaCloudUploadAlt className="text-xl" />
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -138,16 +128,16 @@ function Dashboard() {
         {/* Quick Actions */}
         <div className="flex gap-4">
           <Link
-            to="/member/request-service"
+            to="/member/upload-document"
             className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
           >
-            <FaPlus /> Request a Service
+            <FaPlus /> Upload New Document
           </Link>
           <Link
             to="/member/documents"
             className="flex items-center gap-2 bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
           >
-            <FaFileAlt /> View Documents
+            <FaFileAlt /> View All Documents
           </Link>
         </div>
       </div>
