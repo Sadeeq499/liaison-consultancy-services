@@ -6,6 +6,7 @@ import {
   MdLogout,
   MdSettings,
   MdMenu,
+  MdLanguage,
 } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -69,6 +70,19 @@ function Topbar({ toggleLargeScreenSidebar, isLargeScreenCollapsed }) {
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
+          {/* Website Link */}
+          <a
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 cursor-pointer"
+          >
+            <MdLanguage className="text-2xl text-green-700" />
+            <span className="text-gray-700 hidden md:inline">
+              www.liasion.com
+            </span>
+          </a>
+
           {/* Notifications */}
           <div className="relative">
             <button

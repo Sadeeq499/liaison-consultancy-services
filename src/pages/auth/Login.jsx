@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdEmail, MdLock } from "react-icons/md";
 import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
 import { images } from "../../assets/index";
 
 function Login() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -23,6 +24,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    navigate("/member/dashboard");
   };
 
   return (

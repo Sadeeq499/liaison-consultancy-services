@@ -78,11 +78,11 @@ function Services() {
               className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
               <div className="p-6">
-                <div className="w-16 h-16 mb-4 bg-gradient-to-br from-green-50 to-green-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mb-4  rounded-full flex items-center justify-center">
                   <img
-                    src={service.icon}
+                    src={service.image}
                     alt={service.title}
-                    className="w-8 h-8 object-contain"
+                    className="w-16 h-16 object-cover rounded-full"
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">

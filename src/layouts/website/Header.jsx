@@ -94,7 +94,7 @@ function Header() {
             <NavLink
               to={item.path}
               className={({ isActive }) =>
-                `hover:text-green-700 transition-colors ${
+                `hover:text-green-700 transition-colors cursor-pointer ${
                   isActive ? "text-green-700 font-semibold" : ""
                 }`
               }
@@ -111,7 +111,7 @@ function Header() {
           <Button
             onClick={() => navigate("/login")}
             variant="flat"
-            className="font-semibold bg-green-700 text-white"
+            className="font-semibold bg-green-700 text-white cursor-pointer"
           >
             Login
           </Button>

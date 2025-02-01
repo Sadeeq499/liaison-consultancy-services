@@ -1,66 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { services } from "../../services/servicesData";
 
 function OurServices() {
-  const services = [
-    {
-      id: 1,
-      title: "Structural Engineer Certificate",
-      icon: "/placeholder-structural.png",
-      description:
-        "Professional certification for structural engineering projects",
-    },
-    {
-      id: 2,
-      title: "Architectural & Structural Designs",
-      icon: "/placeholder-architectural.png",
-      description:
-        "Comprehensive architectural and structural design solutions",
-    },
-    {
-      id: 3,
-      title: "NOC - Airport Authority",
-      icon: "/placeholder-airport.png",
-      description: "No Objection Certificates for airport authority compliance",
-    },
-    {
-      id: 4,
-      title: "Environmental NOC",
-      icon: "/placeholder-environmental.png",
-      description: "Environmental clearance and compliance certificates",
-    },
-    {
-      id: 5,
-      title: "Link Documents",
-      icon: "/placeholder-link.png",
-      description: "Essential documentation and linking services",
-    },
-    {
-      id: 6,
-      title: "Land & Zone Conversion",
-      icon: "/placeholder-land.png",
-      description: "Land usage and zoning conversion assistance",
-    },
-    {
-      id: 7,
-      title: "Soil-Test Report",
-      icon: "/placeholder-soil.png",
-      description: "Comprehensive soil testing and analysis reports",
-    },
-    {
-      id: 8,
-      title: "NALA Conversion",
-      icon: "/placeholder-nala.png",
-      description: "Non-Agricultural Land Assessment conversion services",
-    },
-    {
-      id: 9,
-      title: "Revenue Sketch",
-      icon: "/placeholder-revenue.png",
-      description: "Detailed revenue sketch documentation",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white py-16">
       <div className="container mx-auto px-4">
@@ -111,20 +53,20 @@ function OurServices() {
               Our Services
             </motion.h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
+              {services.slice(0, 9).map((service, index) => (
                 <motion.div
-                  key={service.id}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.02 }}
                   className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
                 >
-                  <div className="w-16 h-16 mb-4 bg-gradient-to-br from-green-50 to-green-100 rounded-full flex items-center justify-center group-hover:from-green-100 group-hover:to-green-200 transition-colors duration-300">
+                  <div className="w-16 h-16 mb-4 rounded-full flex items-center justify-center group-hover:from-green-100 group-hover:to-green-200 transition-colors duration-300">
                     <img
-                      src={service.icon}
+                      src={service.image}
                       alt={service.title}
-                      className="w-8 h-8 object-contain"
+                      className="w-16 h-16 object-cover rounded-full"
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-green-700 transition-colors duration-300">

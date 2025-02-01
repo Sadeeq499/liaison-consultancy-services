@@ -1,8 +1,10 @@
+import { images } from "../assets/index";
+
 export const services = [
   {
     title: "Latest E.C",
     description: "Provide the latest Encumbrance Certificate.",
-    // image: LatestEC,
+    image: images.latestEC,
     keyPoints: [
       "Shows property ownership history",
       "Indicates if the property has any legal dues",
@@ -12,7 +14,7 @@ export const services = [
   {
     title: "Latest Market Value Certificate",
     description: "Submit the latest market value certificate.",
-    // image: LandValue,
+    image: images.landValue,
     keyPoints: [
       "Indicates the current market value of the property",
       "Important for tax assessment",
@@ -22,7 +24,7 @@ export const services = [
   {
     title: "Water Feasibility Certificate",
     description: "Provide the water feasibility certificate.",
-    // image: Water,
+    image: images.water,
     keyPoints: [
       "Validates water availability for the site",
       "Important for water-related construction approvals",
@@ -32,7 +34,7 @@ export const services = [
   {
     title: "Structural Engineer Certificate",
     description: "Submit the structural engineer's certificate.",
-    // image: Engineer,
+    image: images.engineer,
     keyPoints: [
       "Certifies the structural integrity of the design",
       "Required for compliance with safety standards",
@@ -42,7 +44,7 @@ export const services = [
   {
     title: "Land-Use Certificate",
     description: "Submit the land-use certificate.",
-    // image: LandUse,
+    image: images.landUse,
     keyPoints: [
       "Validates the intended use of the land",
       "Required for property development",
@@ -52,7 +54,7 @@ export const services = [
   {
     title: "E.C.B.C Certificate",
     description: "Submit the Energy Conservation Building Code certificate.",
-    // image: ECBC,
+    image: images.ecbc,
     keyPoints: [
       "Ensures building compliance with energy efficiency standards",
       "Required for environmentally sustainable construction",
@@ -63,7 +65,7 @@ export const services = [
   {
     title: "NOC - Airport Authority",
     description: "No Objection Certificate from Airport Authority",
-    //  image: NOC,
+    image: images.noc,
     keyPoints: [
       "Approval for construction near airports",
       "Compliance with aviation regulations",
@@ -73,7 +75,7 @@ export const services = [
   {
     title: "N.O.C from District Collector",
     description: "Submit the NOC from the district collector.",
-    //  image: DCNOC,
+    image: images.dcnoc,
     keyPoints: [
       "Government clearance for construction projects",
       "Ensures compliance with district regulations",
@@ -83,7 +85,7 @@ export const services = [
   {
     title: "N.O.C from Irrigation Department",
     description: "Provide the NOC from the irrigation department if required.",
-    // image: NOCIRR,
+    image: images.nocirr,
     keyPoints: [
       "Approval for construction near water bodies",
       "Ensures water flow is not obstructed",
@@ -93,7 +95,7 @@ export const services = [
   {
     title: "N.O.C from Environmental Department",
     description: "Provide the NOC from the environmental department.",
-    // image: ENVNOC,
+    image: images.envnoc,
     keyPoints: [
       "Approval for construction based on environmental impact",
       "Ensures compliance with environmental regulations",
@@ -103,7 +105,7 @@ export const services = [
   {
     title: "N.O.C from Fire Department",
     description: "Provide the NOC from the fire department.",
-    // image: FIRE,
+    image: images.fire,
     keyPoints: [
       "Validates fire safety measures in building design",
       "Required for obtaining building permits",
@@ -113,7 +115,7 @@ export const services = [
   {
     title: "Architectural & Structural Designs",
     description: "Professional design and planning services",
-    // image: Architecture,
+    image: images.architecture,
     keyPoints: [
       "Customized architectural solutions",
       "Structural analysis and planning",
@@ -123,7 +125,7 @@ export const services = [
   {
     title: "Structural Drawings",
     description: "Provide detailed structural drawings.",
-    // image: Structure,
+    image: images.structure,
     keyPoints: [
       "Illustrates the design and load-bearing capacity",
       "Essential for construction and engineering approvals",
@@ -133,7 +135,7 @@ export const services = [
   {
     title: "Sale Deed",
     description: "Submit the Sale Deed for approval.",
-    // image: SalesDeed,
+    image: images.salesDeed,
     keyPoints: [
       "Legal transfer of property ownership",
       "Signed by both buyer and seller",
@@ -143,7 +145,7 @@ export const services = [
   {
     title: "Link Documents",
     description: "Provide link documents for verification.",
-    // image: LandLink,
+    image: images.landLink,
     keyPoints: [
       "Required for document verification",
       "Ensure authenticity of linked documents",
@@ -153,7 +155,7 @@ export const services = [
   {
     title: "Common Affidavit",
     description: "Provide a common affidavit as required.",
-    // image: Affidavit,
+    image: images.affidavit,
     keyPoints: [
       "Legally binds individuals to a statement",
       "Used for legal claims and declarations",
@@ -163,7 +165,7 @@ export const services = [
   {
     title: "Comprehensive Insurance for 6 years",
     description: "Submit comprehensive insurance details.",
-    // image: Insurance,
+    image: images.insurance,
     keyPoints: [
       "Covers potential risks and damages",
       "Important for securing property investment",
@@ -173,7 +175,7 @@ export const services = [
   {
     title: "Google Coordinates for the Proposed Site",
     description: "Provide the exact Google coordinates of the proposed site.",
-    // image: Coord,
+    image: images.coord,
     keyPoints: [
       "Accurate location identification",
       "Necessary for site approval processes",
@@ -183,7 +185,7 @@ export const services = [
   {
     title: "Google Location",
     description: "Share the Google location of the proposed site.",
-    // image: Maps,
+    image: images.maps,
     keyPoints: [
       "Pinpoints the exact location on the map",
       "Useful for site inspections and approvals",
@@ -193,7 +195,7 @@ export const services = [
   {
     title: "Photos of the Proposed Site",
     description: "Provide photos of the proposed site from all four sides.",
-    // image: Site,
+    image: images.site,
     keyPoints: [
       "Visual documentation of the site",
       "Helps with site evaluation and inspection",
@@ -203,7 +205,7 @@ export const services = [
   {
     title: "NALA Conversion",
     description: "Provide NALA conversion documents if applicable.",
-    // image: NALA,
+    image: images.nala,
     keyPoints: [
       "Converts agricultural land for non-agricultural use",
       "Required for changing land use in urban areas",
@@ -213,7 +215,7 @@ export const services = [
   {
     title: "Layout Copy",
     description: "Submit the layout copy.",
-    // image: Layout,
+    image: images.layout,
     keyPoints: [
       "Outlines the property boundaries and construction details",
       "Important for legal and planning purposes",
@@ -223,7 +225,7 @@ export const services = [
   {
     title: "Architect Licence Copy",
     description: "Provide a copy of the architect's licence.",
-    // image: Licence,
+    image: images.licence,
     keyPoints: [
       "Validates the architect’s professional credentials",
       "Required for legal construction approvals",
@@ -234,7 +236,7 @@ export const services = [
     title: "LRS Proceeding Copy",
     description:
       "Submit the Layout Regularisation Scheme proceeding copy if applicable.",
-    // image: LRS,
+    image: images.lrs,
     keyPoints: [
       "Legally approved layout regularization",
       "Required for properties in regulated areas",
@@ -244,7 +246,7 @@ export const services = [
   {
     title: "Court Orders",
     description: "Provide court orders if applicable.",
-    // image: Court,
+    image: images.court,
     keyPoints: [
       "Required if the property is under legal dispute",
       "Ensures the property is free from litigation",
@@ -254,7 +256,7 @@ export const services = [
   {
     title: "Revenue Sketch",
     description: "Submit the revenue sketch if required.",
-    // image: Revenue,
+    image: images.revenue,
     keyPoints: [
       "Illustrates land ownership and boundaries",
       "Used for property legalities and disputes",
@@ -264,7 +266,7 @@ export const services = [
   {
     title: "Khasra Pahani from 1954",
     description: "Submit the Khasra Pahani document if it is a piece of land.",
-    // image: Khasra,
+    image: images.khasra,
     keyPoints: [
       "Ownership and land use document",
       "Required for property verification",
@@ -274,7 +276,7 @@ export const services = [
   {
     title: "Pattadar Passbook",
     description: "Provide the Pattadar passbook if it is a piece of land.",
-    // image: Passbook,
+    image: images.passbook,
     keyPoints: [
       "Official document for land ownership",
       "Used for land transactions and government dealings",
@@ -284,7 +286,7 @@ export const services = [
   {
     title: "Builder Contract Agreement (Registered Copy)",
     description: "Provide a registered copy of the builder contract agreement.",
-    // image: Contract,
+    image: images.contract,
     keyPoints: [
       "Legal agreement between the builder and property owner",
       "Ensures transparency in the construction process",
@@ -294,7 +296,7 @@ export const services = [
   {
     title: "Soil-Test Report",
     description: "Submit the soil-test report.",
-    // image: SoilTest,
+    image: images.soilTest,
     keyPoints: [
       "Analyzes the soil's suitability for construction",
       "Helps with structural design and foundation planning",
@@ -304,7 +306,7 @@ export const services = [
   {
     title: "Structural Analysis Report",
     description: "Submit the structural analysis report.",
-    // image: StrAnal,
+    image: images.strAnal,
     keyPoints: [
       "Analysis of the building’s structural strength",
       "Required for safety and engineering approvals",

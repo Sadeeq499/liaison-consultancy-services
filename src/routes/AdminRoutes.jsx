@@ -8,6 +8,7 @@ import Analytics from "../pages/Admin/Analytics";
 import Support from "../pages/Admin/Support";
 import Settings from "../pages/Admin/Settings";
 import Profile from "../pages/Admin/Profile";
+import ServicesManagement from "../pages/Admin/ServicesManagement";
 
 function AdminRoutes() {
   return (
@@ -21,6 +22,7 @@ function AdminRoutes() {
       <Route path="/admin/support" element={<Support />} />
       <Route path="/admin/settings" element={<Settings />} />
       <Route path="/admin/profile" element={<Profile />} />
+      <Route path="/admin/services" element={<ServicesManagement />} />
     </Routes>
   );
 }

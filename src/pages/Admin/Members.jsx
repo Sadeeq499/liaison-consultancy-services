@@ -31,7 +31,7 @@ function Members() {
       email: "jane@example.com",
       phone: "+1234567891",
       joinDate: "2024-02-01",
-      status: "inactive",
+      status: "blocked",
       requests: 3,
     },
     {
@@ -185,12 +185,12 @@ function Members() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center gap-3">
-                        <button
+                        {/* <button
                           className="text-indigo-600 hover:text-indigo-900"
                           title="Edit"
                         >
                           <MdEdit className="text-xl" />
-                        </button>
+                        </button> */}
                         {member.status === "blocked" ? (
                           <button
                             className="text-green-600 hover:text-green-900"

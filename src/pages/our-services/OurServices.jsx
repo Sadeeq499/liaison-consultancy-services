@@ -1,130 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import MainLayout from "../../layouts/website/MainLayout";
+import { services } from "../../services/servicesData";
 
 function OurServices() {
-  const services = [
-    {
-      id: 1,
-      title: "Structural Engineer Certificate",
-      icon: "/placeholder-structural.png",
-      description:
-        "Professional certification for structural engineering projects",
-      details: [
-        "Comprehensive structural analysis and assessment",
-        "Building safety certifications",
-        "Structural integrity evaluations",
-        "Load-bearing capacity calculations",
-        "Seismic resistance assessment",
-      ],
-    },
-    {
-      id: 2,
-      title: "Architectural & Structural Designs",
-      icon: "/placeholder-architectural.png",
-      description:
-        "Comprehensive architectural and structural design solutions",
-      details: [
-        "Custom architectural designs",
-        "Structural engineering plans",
-        "3D modeling and visualization",
-        "Construction documentation",
-        "Design optimization",
-      ],
-    },
-    {
-      id: 3,
-      title: "NOC - Airport Authority",
-      icon: "/placeholder-airport.png",
-      description: "No Objection Certificates for airport authority compliance",
-      details: [
-        "Height clearance certification",
-        "Aviation safety compliance",
-        "Obstacle assessment",
-        "Documentation preparation",
-        "Regulatory Liasion",
-      ],
-    },
-    {
-      id: 4,
-      title: "Environmental NOC",
-      icon: "/placeholder-environmental.png",
-      description: "Environmental clearance and compliance certificates",
-      details: [
-        "Environmental impact assessment",
-        "Pollution control certification",
-        "Sustainability compliance",
-        "Waste management planning",
-        "Environmental audits",
-      ],
-    },
-    {
-      id: 5,
-      title: "Link Documents",
-      icon: "/placeholder-link.png",
-      description: "Essential documentation and linking services",
-      details: [
-        "Property documentation",
-        "Legal compliance verification",
-        "Document authentication",
-        "Record maintenance",
-        "Digital archiving",
-      ],
-    },
-    {
-      id: 6,
-      title: "Land & Zone Conversion",
-      icon: "/placeholder-land.png",
-      description: "Land usage and zoning conversion assistance",
-      details: [
-        "Land use change applications",
-        "Zoning regulation compliance",
-        "Conversion documentation",
-        "Local authority Liasion",
-        "Development potential assessment",
-      ],
-    },
-    {
-      id: 7,
-      title: "Soil-Test Report",
-      icon: "/placeholder-soil.png",
-      description: "Comprehensive soil testing and analysis reports",
-      details: [
-        "Soil composition analysis",
-        "Bearing capacity testing",
-        "Foundation recommendations",
-        "Geological assessment",
-        "Site suitability evaluation",
-      ],
-    },
-    {
-      id: 8,
-      title: "NALA Conversion",
-      icon: "/placeholder-nala.png",
-      description: "Non-Agricultural Land Assessment conversion services",
-      details: [
-        "Land use conversion processing",
-        "Documentation preparation",
-        "Regulatory compliance",
-        "Application tracking",
-        "Authority coordination",
-      ],
-    },
-    {
-      id: 9,
-      title: "Revenue Sketch",
-      icon: "/placeholder-revenue.png",
-      description: "Detailed revenue sketch documentation",
-      details: [
-        "Property boundary mapping",
-        "Area calculation",
-        "Survey number verification",
-        "Digital sketch preparation",
-        "Record maintenance",
-      ],
-    },
-  ];
-
   return (
     <MainLayout>
       {/* Hero Section */}
@@ -159,18 +38,18 @@ function OurServices() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
-                key={service.id}
+                key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="p-6">
-                  <div className="w-16 h-16 bg-green-100 rounded-full mb-6 flex items-center justify-center">
+                  <div className="w-16 h-16 mb-6 flex items-center justify-center">
                     <img
-                      src={service.icon}
+                      src={service.image}
                       alt={service.title}
-                      className="w-8 h-8"
+                      className="w-16 h-16 object-cover rounded-full"
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">
@@ -178,10 +57,10 @@ function OurServices() {
                   </h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
                   <ul className="space-y-2">
-                    {service.details.map((detail, idx) => (
+                    {service.keyPoints.map((point, idx) => (
                       <li key={idx} className="flex items-start space-x-2">
                         <span className="text-green-600 mt-1">•</span>
-                        <span className="text-gray-600 text-sm">{detail}</span>
+                        <span className="text-gray-600 text-sm">{point}</span>
                       </li>
                     ))}
                   </ul>

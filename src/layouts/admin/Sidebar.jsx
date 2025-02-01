@@ -11,6 +11,7 @@ import {
   MdNotifications,
   MdAnalytics,
   MdPerson,
+  MdMiscellaneousServices,
 } from "react-icons/md";
 import { images } from "../../assets/index";
 
@@ -29,15 +30,21 @@ function Sidebar({ isOpen, toggleSidebar, isLargeScreenCollapsed }) {
       label: "Member Management",
     },
     {
+      path: "/admin/services",
+      icon: <MdMiscellaneousServices className="text-xl" />,
+      label: "Services Management",
+    },
+    {
       path: "/admin/requests",
       icon: <MdRequestPage className="text-xl" />,
       label: "Service Requests",
     },
-    {
-      path: "/admin/documents",
-      icon: <MdFolder className="text-xl" />,
-      label: "Documents",
-    },
+    // {
+    //   path: "/admin/documents",
+    //   icon: <MdFolder className="text-xl" />,
+    //   label: "Documents",
+    // },
+
     {
       path: "/admin/notifications",
       icon: <MdNotifications className="text-xl" />,
